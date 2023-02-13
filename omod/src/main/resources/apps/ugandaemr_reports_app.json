@@ -84,6 +84,15 @@
         "requiredPrivilege": "App: ugandaemrreports.HMIS177ViralLoadAddendumQuarterlyReport"
       },
       {
+        "id": "TPT Protect Report",
+        "extensionPointId": "org.openmrs.module.ugandaemr.reports.quarterly",
+        "type": "link",
+        "label": "TPT Protect Quarterly Report",
+        "url": "reportingui/runReport.page?reportDefinition=dcefe1e9-dfdc-424b-be5d-87aa83accc65",
+        "order": 27,
+        "requiredPrivilege": "App: ugandaemrreports.tptDataReport"
+      },
+      {
         "id": "HMIS ACP 019: HTS REGISTER",
         "extensionPointId": "org.openmrs.module.ugandaemr.reports.registers",
         "type": "link",
