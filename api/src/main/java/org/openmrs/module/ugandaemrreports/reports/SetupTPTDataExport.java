@@ -192,31 +192,13 @@ public class SetupTPTDataExport extends UgandaEMRDataExportManager {
 
 		dsd.addColumn("Viral Load Qualitative", sdd.definition("Viral Load Qualitative", getConcept("dca12261-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
-//		dsd.addColumn("TPT Serial Number", sdd.definition("TPT Serial Number", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
 //		dsd.addColumn("Age At TPT Start", sdd.definition("Age At TPT Start", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 //
 //		dsd.addColumn("ART Status At TPT Start", sdd.definition("ART Status At TPT Start", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
-//		dsd.addColumn("TPT Entry Point", sdd.definition("TPT Entry Point", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
 		dsd.addColumn("TPT Initiation Date", sdd.definition("TPT Initiation Date", getConcept("483939c7-79ba-4ca4-8c3e-346488c97fc7")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
 //		dsd.addColumn("Weight", sdd.definition("Weight", getConcept("5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-
-		// dsd.addColumn("TPT Regimen", sdd.definition("TPT Regimen", getConcept("f595abcb-8bf8-40ec-add4-b060fa209ccb")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-
-//		dsd.addColumn("TPT Visit Date", sdd.definition("TPT Visit Date", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
-//		dsd.addColumn("TPT Received", sdd.definition("TPT Received", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
-//		dsd.addColumn("TPT Adherence", sdd.definition("TPT Adherence", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
-//		dsd.addColumn("Reason For Poor TPT Adherence", sdd.definition("Reason For Poor TPT Adherence", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-
-//		dsd.addColumn("TB Status At TPT Visit", sdd.definition("TB Status At TPT Visit", getConcept("dce02aa1-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
-//		dsd.addColumn("Weight At Visit", sdd.definition("Weight At Visit", getConcept("5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
 		dsd.addColumn("Side Effects", sdd.definition("Side Effects", getConcept("23a6dc6e-ac16-4fa6-8029-155522548d04")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
@@ -224,8 +206,6 @@ public class SetupTPTDataExport extends UgandaEMRDataExportManager {
 
 		dsd.addColumn("TPT Outcome Date", sdd.definition("TPT Outcome Date", getConcept("813e21e7-4ccb-4fe9-aaab-3c0e40b6e356")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
-//		dsd.addColumn("Reason for Stopping TPT", sdd.definition("Reason for Stopping TPT", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
-//
 //		dsd.addColumn("Date Of Registration in TB Unit", sdd.definition("Date Of Registration in TB Unit", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
 		dsd.addColumn("Disease Classification", sdd.definition("Disease Classification", getConcept("d45871ee-62d6-4d4d-b905-f7b75a3fd3bb")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
@@ -239,6 +219,24 @@ public class SetupTPTDataExport extends UgandaEMRDataExportManager {
 //		dsd.addColumn("Pre-treatment GeneXpert Test", sdd.definition("Pre-treatment GeneXpert Test", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 //
 //		dsd.addColumn("Other Treatment Investigation", sdd.definition("Other Treatment Investigation", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+
+//		dsd.addColumn("TB treatment outcome", sdd.definition("Pre-treatment Sputum Smear", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+//
+//		dsd.addColumn("TB treatment outcome date", sdd.definition("Pre-treatment GeneXpert Test", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+//
+//		dsd.addColumn("Initial ART regimen", sdd.definition("Other Treatment Investigation", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+
+//		dsd.addColumn("New ART regimen", sdd.definition("Pre-treatment Sputum Smear", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+//
+//		dsd.addColumn("Date regimen switch", sdd.definition("Pre-treatment GeneXpert Test", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+//
+//		dsd.addColumn("Status – Transfer out - Date", sdd.definition("Other Treatment Investigation", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+
+//		dsd.addColumn("Status – LTFU – Date", sdd.definition("Pre-treatment Sputum Smear", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+
+//		dsd.addColumn("Status – Dead - Date", sdd.definition("Other Treatment Investigation", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
+
+//		dsd.addColumn("Cause of death", sdd.definition("Pre-treatment Sputum Smear", getConcept("dce03b2f-30ab-102d-86b0-7a5022ba4115")), "onOrAfter=${startDate},onOrBefore=${endDate}", new ObsDataConverter());
 
 		rd.addDataSetDefinition("TPT_LIST", Mapped.mapStraightThrough(dsd));
 		return rd;
