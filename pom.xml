@@ -3,7 +3,7 @@
 
     <groupId>org.openmrs.module</groupId>
     <artifactId>ugandaemrreports</artifactId>
-    <version>2.1.5-SNAPSHOT</version>
+    <version>2.1.5</version>
     <packaging>pom</packaging>
     <name>UgandaEMR Reports Module</name>
     <description>Reports for the UgandaEMR distribution</description>
@@ -25,7 +25,7 @@
         <developerConnection>scm:git:git@github.com:METS-Programme/openmrs-module-ugandaemr-reports.git
         </developerConnection>
         <url>scm:git:https://github.com/METS-Programme/openmrs-module-ugandaemr-reports.git</url>
-        <tag>2.0.36-SNAPSHOT</tag>
+        <tag>2.1.5</tag>
     </scm>
 
     <modules>
@@ -345,9 +345,9 @@
                                     <!-- Set 1 to recompile/build the scripts else 0 - not to. If 1 - don't forget to change the liquibase changeset ID -->
                                     <argument>-b 1</argument>
 
-                                    <argument/>
+                                    <argument />
 
-                                    <argument/>
+                                    <argument />
 
                                 </arguments>
                             </configuration>
