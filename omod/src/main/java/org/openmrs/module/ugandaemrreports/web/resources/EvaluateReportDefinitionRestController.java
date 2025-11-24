@@ -46,6 +46,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -98,21 +99,39 @@ public class EvaluateReportDefinitionRestController {
                 Map<String, Object> parameterValues = new HashMap<String, Object>();
 
                 for (Parameter parameter : rd.getParameters()) {
-                    String submitted = request.getParameter(parameter.getName());
+                    String name = parameter.getName();
+                    String submitted = request.getParameter(name);
+                    Class<?> targetType = parameter.getType();
+
                     if (parameter.getCollectionType() != null) {
                         throw new IllegalStateException("Collection parameters not yet implemented");
                     }
-                    Object converted;
-                    if (StringUtils.isEmpty(submitted)) {
+
+                    Object converted = null;
+
+                    boolean hasValue = submitted != null && !submitted.trim().isEmpty();
+
+                    if (!hasValue) {
                         converted = parameter.getDefaultValue();
                     } else {
-                        converted = conversionService.convert(submitted, parameter.getType());
+                        try {
+                            converted = conversionService.convert(submitted, targetType);
+                        } catch (Exception e) {
+
+                            if (java.util.Date.class.isAssignableFrom(targetType)) {
+                                converted = tryParseDate(submitted);
+                            }
+                        }
                     }
+
                     if (converted == null) {
                         missingParameters.add(parameter);
                     }
-                    parameterValues.put(parameter.getName(), converted);
+
+                    parameterValues.put(name, converted);
                 }
+
+
 
                 context.setParameterValues(parameterValues);
 
@@ -345,6 +364,28 @@ public class EvaluateReportDefinitionRestController {
         objectNode.put("period", period);
         return report.toString();
     }
+
+    private Date tryParseDate(String value) {
+        List<String> patterns = Arrays.asList(
+                "yyyy-MM-dd",                // 2025-11-24 (ISO)
+                "yyyy-MM-dd'T'HH:mm:ss",     // 2025-11-24T14:30:00
+                "dd/MM/yyyy",                // 24/11/2025 (if needed)
+                "MM/dd/yyyy"                 // 11/24/2025 (if needed)
+        );
+
+        for (String pattern : patterns) {
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+                sdf.setLenient(false);
+                return sdf.parse(value);
+            } catch (ParseException ignored) {
+                // try next pattern
+            }
+        }
+
+        return null; // caller will treat this as invalid
+    }
+
 
 
 
